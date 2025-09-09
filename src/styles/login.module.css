@@ -1,0 +1,221 @@
+:root {
+  --background-color-main: linear-gradient(90deg, #0B3269, #1563CF, #104B9C,#0B3269);
+  --background-flash: linear-gradient(90deg, #1563CF, #8AB1E7);
+  --send-massege-color: linear-gradient(90deg,#997B59,#FFCD94);  
+  --login-color-1: #DCF9FA;  
+  --login-border-color-1: #00A3A3;        
+  --background-color: linear-gradient(90deg, #A7A7A7, #FFFFFF);
+}
+
+
+
+.container {
+  width: 800px;
+  margin: 30px auto;
+  padding: 100px;
+  background: var(--secondry-color);
+  border-radius: 60px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  text-align: center;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+}
+
+.container h1{
+  margin: 0 0 50px 0;
+}
+
+
+.toggleButtons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.toggleButtons button {
+  font-family: 'IRANSans';
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: var(--login-color-1);
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 0.9rem;
+}
+
+.toggleButtons button.active {
+  background: var(--perimry-color);
+  color: var(--secondry-color);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form input {
+  font-family: 'IRANSans';
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.form input:focus {
+  outline: none; /* حذف حاشیه پیش‌فرض مرورگر */
+  border-color: var(--perimry-color); /* رنگ جدید دور input */
+  box-shadow: 0 0 5px rgba(0, 163, 163, 0.5); /* افکت نرم برای جذابیت */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submitBtn {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: 'IRANSans';
+  color: var(--perimry-color); /* رنگ اصلی از authButton */
+  background: linear-gradient(to right, var(--login-color-1) 50%, var(--perimry-color) 50%);
+  background-size: 200% 100%;
+  background-position: left center;
+  transition: background-position 0.5s ease, color 0.5s ease;
+}
+
+.submitBtn:hover {
+  background-position: right center;
+  color: var(--secondry-color);
+}
+
+.forgotSection {
+  margin-top: 15px;
+}
+
+.forgotSection span {
+  color: var(--perimry-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.forgotSection span:hover {
+  cursor: pointer;
+  color: var(--login-color-1);
+}
+
+
+
+
+/* Overlay تمام صفحه برای modal فراموشی رمز عبور */
+.resetOverlayFull {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:var(--Tertiary-color-4); /* کل صفحه کم‌رنگ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+/* مستطیل وسط صفحه */
+.resetPanelFull {
+  background: var(--secondry-color); /* کامل پر و پشت خودش دیده نمی‌شود */
+  width: 90%;
+  max-width: 500px;
+  padding: 30px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: center;
+  z-index: 10001;
+}
+.resetPanelFull input{
+    font-family: 'IRANSans';
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.resetPanelFull input:focus {
+  outline: none;
+  /*حذفحاشیهپیش‌فرضمرورگر*/border-color: var(--perimry-color);
+  /*رنگجدیددورinput*/box-shadow: 0 0 5px rgba(0, 163, 163, 0.5);
+  /*افکتنرمبرایجذابیت*/transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  -webkit-transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  -moz-transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  -ms-transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  -o-transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+
+
+
+
+
+/* ===================== Responsive موبایل ===================== */
+@media (max-width: 480px) {
+  .container {
+    width: 80%;
+    padding: 40px;
+    border-radius: 30px;
+  }
+
+  .container h1 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+
+  .toggleButtons {
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .toggleButtons button {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+
+  .form {
+    gap: 10px;
+  }
+
+  .form input {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+
+  .submitBtn {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+
+  .forgotSection {
+    font-size: 0.8rem;
+    margin-top: 10px;
+  }
+
+  .resetPanelFull {
+    width: 85%;
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .resetPanelFull input {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+}

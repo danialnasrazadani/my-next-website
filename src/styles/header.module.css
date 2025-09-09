@@ -1,0 +1,259 @@
+
+@keyframes slideDown {
+  0% { transform: translateY(-100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.header {
+  width: auto;
+  height: 150px;
+  background: var(--background-flash);
+  border-bottom-left-radius: 50% 30px;  
+  border-bottom-right-radius: 50% 30px; 
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-weight: bold;
+  position: relative;
+  animation: slideDown 0.8s ease-out forwards;
+}
+
+.logo {
+  padding: 0;
+  margin: 0 100px 0 0;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: right;
+}
+
+.navLinks {
+  display: flex;
+  gap: 6rem;
+  justify-content: center;
+  flex: 1;
+  align-items: center;
+}
+
+.navLink {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.authSection {
+  margin: 0px 20px 15px 70px;
+  align-items: center;
+  gap: 4rem;
+  display: flex;
+  position: relative;
+}
+
+/* استایل دکمه لاگین */
+.authButton {
+  display: inline-block;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'IRANSans';
+  color: var(--perimry-color);
+  background: linear-gradient(to right, var(--login-color-1) 50%, var(--perimry-color) 50%);
+  background-size: 200% 100%;
+  background-position: left center;
+  transition: background-position 0.5s ease, color 0.5s ease;
+}
+
+.authButton:hover {
+  background-position: right center;
+  color: var(--secondry-color); 
+}
+
+/* ناوبری و منوهای کشویی */
+.navItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.navItem button {
+  font-family: 'IRANSans';
+  background: none;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.arrowIcon {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid rgb(0, 0, 0);
+  border-bottom: 2px solid rgb(0, 0, 0);
+  transform: rotate(45deg);
+  margin-left: 0.2rem;
+}
+
+.dropdownMenu {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--secondry-color);
+  color: var(--Tertiary-color-3);
+  min-width: 300px;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  padding: 0.5rem;
+  z-index: 10;
+}
+
+.dropdownMenu a {
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: var(--Tertiary-color-3);
+  display: block;
+}
+
+.dropdownMenu a:hover {
+  background-color: var(--Quinary-color-1);
+}
+
+/* استایل پنل کاربری کوچک */
+.userPanel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.1);
+}
+
+.username {
+  font-size: 14px;
+  color: var(--secondry-color);
+}
+
+/* منوی کشویی Hover با framer-motion */
+.dropdownMenuHover {
+  position: absolute;
+  top: 50px; /* زیر آواتار */
+  right: 0;
+  background: var(--secondry-color);
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 50;
+}
+
+.dropdownButton {
+  background: transparent;
+  border: none;
+  color: var(--perimry-color-3);
+  cursor: pointer;
+  padding: 5px 10px;
+  text-align: left;
+  font-family: 'IRANSans';
+}
+
+.dropdownButton:hover {
+  background: var(--senary-color);
+}
+
+
+
+
+
+
+
+/* ===================== Responsive موبایل ===================== */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+    border-bottom-left-radius: 30% 20px;
+    border-bottom-right-radius: 30% 20px;
+  }
+
+  .logo {
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .navLinks {
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .navLink {
+    font-size: 0.9rem;
+  }
+
+  .authSection {
+    flex-direction: column;
+    margin: 10px 0 0 0;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .authButton {
+    width: 10%;
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .dropdownMenu {
+    min-width: 90%;
+    left: 0;
+  }
+
+  .userPanel {
+    gap: 5px;
+  }
+
+  .avatar {
+    width: 35px;
+    height: 35px;
+  }
+
+  .username {
+    font-size: 12px;
+  }
+
+  .dropdownMenuHover {
+    top: 35px;
+    right: 5px;
+    min-width: 150px;
+     flex-direction: row;
+     
+  }
+
+  .dropdownButton {
+    font-size: 0.85rem;
+    padding: 5px;
+  }
+}

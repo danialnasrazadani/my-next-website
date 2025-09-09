@@ -1,0 +1,178 @@
+
+/* ===== Keyframes برای انیمیشن Slide Down ===== */
+@keyframes slideDownMain {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+}
+  110% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ===== Main Container ===== */
+.container {
+  display: flex;
+  justify-content: center; /* وسط افقی */
+  align-items: center;     /* وسط عمودی */
+  height: 735px;
+  font-family: 'IRANSans';
+
+  /* انیمیشن Slide Down */
+  animation: slideDownMain 0.8s ease-out forwards;
+}
+
+/* ===== Hero (h1 + img) ===== */
+.hero {
+  display: flex;
+  align-items: center;    /* وسط چین عمودی h1 و img */
+  gap: 2rem;              /* فاصله بین متن و تصویر */
+  text-align: center;
+}
+
+/* اندازه h1 */
+.hero h1 {
+  font-size: 90px;      
+  margin: 100px;
+}
+
+
+.hero img {
+  box-shadow:20px 20px 5px rgba(16, 75, 156, 0.2);
+  height: auto;
+  width: 600px;
+  margin: 0 15px 10px 0;
+  border:none;
+  border-radius:110px;
+  -webkit-border-radius:110PX;
+  -moz-border-radius:110PX;
+  -ms-border-radius:110PX;
+  -o-border-radius:110PX;
+}
+.borderimg{
+  width: 615px;
+  height: 490px;
+  box-shadow:inset -1px -1px 20px rgb(255, 255, 255);
+  border-radius: 110px;
+  border-top: solid 0px #ffffff;
+  border-right: solid 0px #FFFFFF;
+  -webkit-border-radius: 110px;
+  -moz-border-radius: 110px;
+  -ms-border-radius: 110px;
+  -o-border-radius: 110px;
+}
+
+/* ===== ریسپانسیو ===== */
+@media (max-width: 1024px) {
+  .hero h1, .hero img {
+    font-size: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column; /* کنار هم بودن به زیر هم تغییر کند */
+    gap: 1.5rem;
+  }
+
+  .hero h1, .hero img {
+    font-size: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1, .hero img {
+    font-size: 60px;
+    height: 60px;
+  }
+}
+
+.gradientbtn {
+  margin: 0px 0px 0 0px;
+  display: inline-block;
+  padding: 30px 65px;
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--secondry-color);
+  border-radius: 30px;
+  text-decoration: none;
+  background: var(--background-flash);
+  background-size: 200% auto;
+  transition: background-position 0.5s ease;
+}
+
+.gradientbtn:hover {
+  background-position: right center;
+}
+.contentleft{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+
+
+
+
+
+
+/* ===================== Responsive موبایل ===================== */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .hero img {
+    width: 90%;
+    height: auto;
+    border-radius: 30px;
+    margin: 0 auto;
+  }
+
+  .borderimg {
+    width: 95%;
+    height: auto;
+    margin: 0 auto 20px;
+    border-radius: 30px;
+  }
+
+  .gradientbtn {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+  }
+
+  .contentleft {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero img {
+    width: 100%;
+  }
+
+  .gradientbtn {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+}
